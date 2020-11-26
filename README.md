@@ -64,6 +64,18 @@ alias l='ls -lah'
 
 
 
+<br>
+
+---
+
+### Github
+
+
+* make github account
+
+* [optional] you can also setup ssh following [these instructions](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/connecting-to-github-with-ssh) so you can directly push to your repos without password from your personal computer
+
+
 <br> 
 
 ---
@@ -159,15 +171,12 @@ Here is what will work on older git versions:
 
 
 
-<br>
 
-**Install GitKraken**
+<br> 
 
+---
 
-
-
-
-#### local workflow
+#### Local workflow
 
 ![alt text](https://cdn-images-1.medium.com/max/800/1*diRLm1S5hkVoh5qeArND0Q.png)
 
@@ -182,6 +191,7 @@ Here is what will work on older git versions:
 `git lg`
 
 <br>
+
 **Diff**
 
 `git diff <SHAnew>..<SHAold>` compares 2 commits from history
@@ -228,13 +238,7 @@ git merge branchFromWhichToMerge
 
 ---
 
-### Github
-
-
-* make github account
-
-* setup ssh following [these instructions](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/connecting-to-github-with-ssh) so you can directly push to your repos without password
-
+### Workflow with remotes
 
 
 <br>
@@ -441,3 +445,8 @@ and then the "dirty" flag will diappear (note we may still need to commit the ch
 ---
 
 **Workflows**
+
+* centralized workflow
+* feature branch workflow
+* gitflow
+* forking workflow
