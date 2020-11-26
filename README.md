@@ -5,15 +5,15 @@
 
 ### Command line basics
 
-Brief intro in [Datalad handbook](http://handbook.datalad.org/en/latest/intro/howto.html). 
+Brief intro in [Datalad handbook](http://handbook.datalad.org/en/latest/intro/howto.html).
 
-More elaborate intro in this [tutorial](https://htmlpreview.github.io/?https://github.com/berkeley-scf/tutorial-using-bash/blob/master/bash.html). 
+More elaborate intro in this [tutorial](https://htmlpreview.github.io/?https://github.com/berkeley-scf/tutorial-using-bash/blob/master/bash.html).
 
-* bash commands have arguments and options 
+* bash commands have arguments and options
 
 ```
 mkdir myDirName
-mkdir -p mySubdirName/myDirName 
+mkdir -p mySubdirName/myDirName
 
 ```
 
@@ -21,7 +21,7 @@ mkdir -p mySubdirName/myDirName
 
 * in Finder copy file or folder path to clipboard using `Cmd-Opt-C`
 
-**Crucial commands to know**: 
+**Crucial commands to know**:
 
 `pwd` shows current working directory
 
@@ -29,7 +29,7 @@ mkdir -p mySubdirName/myDirName
 
 `ls -lah` lists files in current working directory
 
-* setup as alias `ll`, open `~/. bash_profile` and paste the following: 
+* setup as alias `ll`, open `~/. bash_profile` and paste the following:
 
 ```
 alias l='ls -lah'
@@ -39,15 +39,15 @@ alias l='ls -lah'
 
 `.. ` one directory above the current one
 
-`~ ` shortcut to home folder 
+`~ ` shortcut to home folder
 
 
-`tree ` 
+`tree `
 
 * must be installed first on macOS `brew install tree`
 
 
-`mkdir` makes new directory 
+`mkdir` makes new directory
 
 `cp` copies files
 
@@ -58,33 +58,38 @@ alias l='ls -lah'
 `rm -rf` removes directories and their contents (very dangerous!)
 
 
+### GitKraken
+
+To install GitKraken please [click here](https://www.gitkraken.com/).
+
+If you are  student or teaching, you can use upgrade your [GitHub account to Pro](https://education.github.com/pack),
+and you can visualise the private repos in your GitKraken. Otherwise all the repos you can see on work on with GitKraken has to be public. 
 
 
 
 
-
-<br> 
+<br>
 
 ---
 
 ### GIT
 
-* setup username and email (these willl be displayed next to your commits) 
+* setup username and email (these willl be displayed next to your commits)
 
 ```
 git config --global user.name "<Your-Full-Name>"
 git config --global user.email "<your-email-address>"
 ```
 
-* install [atom](https://atom.io/) and set it as default text editor 
+* install [atom](https://atom.io/) and set it as default text editor
 
 ```
 git config --global core.editor "atom --wait"
 ```
 
-* setup alias `git lg` for nice log graphs: 
+* setup alias `git lg` for nice log graphs:
 
-Paste the following code into `~/.gitconfig` file: 
+Paste the following code into `~/.gitconfig` file:
 
 ```
 [alias]
@@ -99,7 +104,7 @@ Paste the following code into `~/.gitconfig` file:
 
 ```
 
-<br> 
+<br>
 
 **Install GitKraken**
 
@@ -133,7 +138,7 @@ Paste the following code into `~/.gitconfig` file:
 
 **Moving in history**
 
-`git checkout <SHA>` 
+`git checkout <SHA>`
 
 * detached HEAD
 
@@ -146,32 +151,32 @@ Paste the following code into `~/.gitconfig` file:
 `git checkout -b newBranchName` makes a new local branch
 
 `git checkout branchName` switches to existing branch
- 
+
 <br>
 
 **Merge**
 
-from branch *to* which you want to merge, type 
+from branch *to* which you want to merge, type
 
 ```
 git merge branchFromWhichToMerge
 ```
 
-`-ff` fast forward option (automatic if possible) makes not merge commit 
+`-ff` fast forward option (automatic if possible) makes not merge commit
 
 
 * merge conflict
 
 
 
-<br> 
+<br>
 
 ---
 
 ### Github
 
 
-* make github account 
+* make github account
 
 * setup ssh following [these instructions](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/connecting-to-github-with-ssh) so you can directly push to your repos without password
 
@@ -191,9 +196,9 @@ git merge branchFromWhichToMerge
 
 <br>
 
-#### collaboration in one shared repo 
+#### collaboration in one shared repo
 
-`git fetch remoteName` 
+`git fetch remoteName`
 
 `git pull remoteName branchName`
 
@@ -203,12 +208,12 @@ git merge branchFromWhichToMerge
 
 * fork a repo on GitHub
 * clone my forked repo from GitHub
-* make a local branch 
+* make a local branch
 * work on changes
 * push the branch to my GitHub
 * open pull-request on GitHub
 
-`git clone url` make a local copy 
+`git clone url` make a local copy
 
 
 
@@ -216,7 +221,7 @@ git merge branchFromWhichToMerge
 
 <br>
 
---- 
+---
 
 **Undo things**
 
@@ -234,7 +239,7 @@ git checkout -- filename
 the `--` is to separate the commits (there are none in this case cause we want the HEAD on the current branch, which is default) and filenames that should be checked out
 
 
-* remove last commit, but keep the modifications as non-added 
+* remove last commit, but keep the modifications as non-added
 
 ```
 git reset --mixed SHA
@@ -252,22 +257,22 @@ git reset --hard SHA
 git reflog
 ```
 
-* revert a single file to previous state (at commit <SHA>) and get the file 
-modification from that point onwards back to working directory (don't change 
+* revert a single file to previous state (at commit <SHA>) and get the file
+modification from that point onwards back to working directory (don't change
 history or anything)
 
 ```
 git checkout <SHA> -- filename
 ```
 
-* reset to a specific commit 
+* reset to a specific commit
 
 ```
 git reset --hard <SHA>
 ```
 
 
-* to undo changes but don't change history 
+* to undo changes but don't change history
 
 ```
 git revert <SHA>
@@ -277,10 +282,10 @@ git revert <SHA>
 
 dry run (see what would be removed)
 ```
-git clean -n 
+git clean -n
 ```
 
-remove files (-f), directories (-d), ignored files (-X), ignored and 
+remove files (-f), directories (-d), ignored files (-X), ignored and
 nonignored files (-x)
 
 ```
@@ -289,7 +294,7 @@ git clean -fx
 
 git clean and reset can be both used equivalently to clean working tree
 
-only git reset can reset things in the staging index 
+only git reset can reset things in the staging index
 
 
 
@@ -297,13 +302,13 @@ only git reset can reset things in the staging index
 
 <br>
 
---- 
+---
 
-**Submodules** 
+**Submodules**
 
-`git add submodule url` adds a git repo as submodule 
+`git add submodule url` adds a git repo as submodule
 
-* after cloning a big repo repo that contains submodules, you must get these submodules manually: 
+* after cloning a big repo repo that contains submodules, you must get these submodules manually:
 
 `git submodule init` update local config file with data from .gitmodules
 
@@ -316,14 +321,14 @@ git submodule foreach --recursive 'git submodule init'
 git submodule foreach --recursive 'git submodule update'
 ```
 
-* to pull updates in the submodule manually, you need to be in the folder and type 
+* to pull updates in the submodule manually, you need to be in the folder and type
 
 ```
 git fetch
 git merge origin/master
 ```
 
-if we pull a new commit of the parent repo where changes in the submodules are indicated, this doesn't automatically update the subomdule commits 
+if we pull a new commit of the parent repo where changes in the submodules are indicated, this doesn't automatically update the subomdule commits
 
 what you need to do is:  
 
@@ -333,9 +338,9 @@ git submodule update --recursive
 
 Sometimes, from the parent repo, git status will show that the submodule directory was changed and git diff on that directory will show either different commit SHAs or same SHAs but the `+` one with "*dirty*" appended
 
-Submodule is "dirty" if we edit files in the submodule. 
+Submodule is "dirty" if we edit files in the submodule.
 
-Example: 
+Example:
 
 Imagine we have nested submodules in a git repo
 
@@ -348,15 +353,15 @@ parent
 
 let's say we go to CPP_BIDS and checkout a different branch
 
-but let's say this branch points to different bids-matlab commit 
+but let's say this branch points to different bids-matlab commit
 
-but bids-matlab doesn't update automatically, so from CPP_BIDS, and hence it will look like we have working tree changes in bids-matlab 
+but bids-matlab doesn't update automatically, so from CPP_BIDS, and hence it will look like we have working tree changes in bids-matlab
 
 and when calling git diff from parent, we will see something like
 > 	-Subproject commit 57738dc8bdfcf3c1db13d18edfbb1d1a9cedfe4e
 > 	+Subproject commit dfa4bc80f60e3ed555805890254ef6189b63dc04-dirty
 
-We need to go to CPP_BIDS, call: 
+We need to go to CPP_BIDS, call:
 
 ```
 git submodule update --recursive
@@ -369,7 +374,7 @@ and then the "dirty" flag will diappear (note we may still need to commit the ch
 
 <br>
 
---- 
+---
 
 **Rebase**
 
@@ -378,11 +383,6 @@ and then the "dirty" flag will diappear (note we may still need to commit the ch
 
 <br>
 
---- 
+---
 
 **Workflows**
-
-
-
-
-
