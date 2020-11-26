@@ -313,26 +313,30 @@ Example:
 
 Imagine we have nested submodules in a git repo
 
+```
 parent
 	CPP_BIDS
 		bids-matlab
+```
 
 
--> let's say we go to CPP_BIDS and checkout a different branch
--> but let's say this branch points to different bids-matlab commit 
--> but bids-matlab doesn't update automatically, so from CPP_BIDS, and hence it will look like we have working tree changes in bids-matlab 
+let's say we go to CPP_BIDS and checkout a different branch
 
--> and when calling git diff from parent, we will see something like
-	-Subproject commit 57738dc8bdfcf3c1db13d18edfbb1d1a9cedfe4e
-	+Subproject commit dfa4bc80f60e3ed555805890254ef6189b63dc04-dirty
+but let's say this branch points to different bids-matlab commit 
 
--> We need to go to CPP_BIDS, call: 
-> git submodule update --recursive
-or 
-> git submodule foreach --recursive "git submodule update"
+but bids-matlab doesn't update automatically, so from CPP_BIDS, and hence it will look like we have working tree changes in bids-matlab 
 
--> and then the "dirty" flag will diappear
-(note we may still need to commit the change in subdataset SHA in the parent  
+and when calling git diff from parent, we will see something like
+> 	-Subproject commit 57738dc8bdfcf3c1db13d18edfbb1d1a9cedfe4e
+> 	+Subproject commit dfa4bc80f60e3ed555805890254ef6189b63dc04-dirty
+
+We need to go to CPP_BIDS, call: 
+
+```
+git submodule update --recursive
+git submodule foreach --recursive "git submodule update"
+```
+and then the "dirty" flag will diappear (note we may still need to commit the change in subdataset SHA in the parent  
 
 
 
