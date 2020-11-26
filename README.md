@@ -29,7 +29,7 @@ mkdir -p mySubdirName/myDirName
 
 `ls -lah` lists files in current working directory
 
-* setup as alias `ll`, open `~/. bash_profile` and paste the following:
+* setup as alias `ll`, open `~/.bash_profile` and paste the following:
 
 ```
 alias l='ls -lah'
