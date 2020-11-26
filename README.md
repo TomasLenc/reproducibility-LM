@@ -211,95 +211,12 @@ git merge branchFromWhichToMerge
 `git clone url` make a local copy 
 
 
-<br>
-
-**Submodules** 
-
-`git add submodule url` adds a git repo as submodule 
-
-* after cloning a big repo repo that contains submodules, you must get these submodules manually: 
-
-`git submodule init` update local config file with data from .gitmodules
-
-`git submodule update` fetch and checkout the mapped commit in each submodule
-
-* get nested submodules recursively
-
-```
-git submodule foreach --recursive 'git submodule init'
-git submodule foreach --recursive 'git submodule update'
-```
-
-* to pull updates in the submodule manually, you need to be in the folder and type 
-
-```
-git fetch
-git merge origin/master
-```
-
-if we pull a new commit of the parent repo where changes in the submodules are indicated, this doesn't automatically update the subomdule commits 
-
-what you need to do is:  
-
-```
-git submodule update --recursive
-```
-
-Sometimes, from the parent repo, git status will show that the submodule directory was changed and git diff on that directory will show either different commit SHAs or same SHAs but the `+` one with "*dirty*" appended
-
-Submodule is "dirty" if we edit files in the submodule. 
-
-Example: 
-
-Imagine we have nested submodules in a git repo
-
-```
-parent
-	CPP_BIDS
-		bids-matlab
-```
-
-
-let's say we go to CPP_BIDS and checkout a different branch
-
-but let's say this branch points to different bids-matlab commit 
-
-but bids-matlab doesn't update automatically, so from CPP_BIDS, and hence it will look like we have working tree changes in bids-matlab 
-
-and when calling git diff from parent, we will see something like
-> 	-Subproject commit 57738dc8bdfcf3c1db13d18edfbb1d1a9cedfe4e
-> 	+Subproject commit dfa4bc80f60e3ed555805890254ef6189b63dc04-dirty
-
-We need to go to CPP_BIDS, call: 
-
-```
-git submodule update --recursive
-git submodule foreach --recursive "git submodule update"
-```
-and then the "dirty" flag will diappear (note we may still need to commit the change in subdataset SHA in the parent  
-
-
 
 
 
 <br>
 
-**Rebase**
-
-* no merge commmit, keeps history clean
-
-<br>
-
-**Workflows**
-
-
-
-
-
-
----
-
-<br>
+--- 
 
 **Undo things**
 
@@ -373,6 +290,97 @@ git clean -fx
 git clean and reset can be both used equivalently to clean working tree
 
 only git reset can reset things in the staging index 
+
+
+
+
+
+<br>
+
+--- 
+
+**Submodules** 
+
+`git add submodule url` adds a git repo as submodule 
+
+* after cloning a big repo repo that contains submodules, you must get these submodules manually: 
+
+`git submodule init` update local config file with data from .gitmodules
+
+`git submodule update` fetch and checkout the mapped commit in each submodule
+
+* get nested submodules recursively
+
+```
+git submodule foreach --recursive 'git submodule init'
+git submodule foreach --recursive 'git submodule update'
+```
+
+* to pull updates in the submodule manually, you need to be in the folder and type 
+
+```
+git fetch
+git merge origin/master
+```
+
+if we pull a new commit of the parent repo where changes in the submodules are indicated, this doesn't automatically update the subomdule commits 
+
+what you need to do is:  
+
+```
+git submodule update --recursive
+```
+
+Sometimes, from the parent repo, git status will show that the submodule directory was changed and git diff on that directory will show either different commit SHAs or same SHAs but the `+` one with "*dirty*" appended
+
+Submodule is "dirty" if we edit files in the submodule. 
+
+Example: 
+
+Imagine we have nested submodules in a git repo
+
+```
+parent
+	CPP_BIDS
+		bids-matlab
+```
+
+
+let's say we go to CPP_BIDS and checkout a different branch
+
+but let's say this branch points to different bids-matlab commit 
+
+but bids-matlab doesn't update automatically, so from CPP_BIDS, and hence it will look like we have working tree changes in bids-matlab 
+
+and when calling git diff from parent, we will see something like
+> 	-Subproject commit 57738dc8bdfcf3c1db13d18edfbb1d1a9cedfe4e
+> 	+Subproject commit dfa4bc80f60e3ed555805890254ef6189b63dc04-dirty
+
+We need to go to CPP_BIDS, call: 
+
+```
+git submodule update --recursive
+git submodule foreach --recursive "git submodule update"
+```
+and then the "dirty" flag will diappear (note we may still need to commit the change in subdataset SHA in the parent  
+
+
+
+
+<br>
+
+--- 
+
+**Rebase**
+
+* no merge commmit, keeps history clean
+
+
+<br>
+
+--- 
+
+**Workflows**
 
 
 
