@@ -101,7 +101,7 @@ Paste the following code into `~/.gitconfig` file:
 
 <br> 
 
-**Install GitKraken **
+**Install GitKraken**
 
 
 
@@ -161,85 +161,6 @@ git merge branchFromWhichToMerge
 
 
 * merge conflict
-
-
-
-<br>
-
-**Undo things**
-
-
-* add staged content to the last commit (and change the commit message)
-
-```git commit --amend```
-
-* if there is a new untracked file or non-added changes you want to remove
-
-```
-git checkout -- filename
-```
-
-the `--` is to separate the commits (there are none in this case cause we want the HEAD on the current branch, which is default) and filenames that should be checked out
-
-
-* remove last commit, but keep the modifications as non-added 
-
-```
-git reset --mixed SHA
-```
-
-* remove last commit and discard the changes altogether (!dangerous)
-
-```
-git reset --hard SHA
-```
-
-!!! hard reset can be undone using reflog, just see where the HEAD was before and find the SHA you need
-
-```
-git reflog
-```
-
-* revert a single file to previous state (at commit <SHA>) and get the file 
-modification from that point onwards back to working directory (don't change 
-history or anything)
-
-```
-git checkout <SHA> -- filename
-```
-
-* reset to a specific commit 
-
-```
-git reset --hard <SHA>
-```
-
-
-* to undo changes but don't change history 
-
-```
-git revert <SHA>
-```
-
-* to remove new untracked files (e.g. after trying code that produces output, we need to clean this "testing" output before using "datalad run" (see [here](https://www.codegrepper.com/code-examples/shell/git+remove+Untracked+files))
-
-dry run (see what would be removed)
-```
-git clean -n 
-```
-
-remove files (-f), directories (-d), ignored files (-X), ignored and 
-nonignored files (-x)
-
-```
-git clean -fx
-```
-
-git clean and reset can be both used equivalently to clean working tree
-
-only git reset can reset things in the staging index 
-
-
 
 
 
@@ -372,6 +293,86 @@ and then the "dirty" flag will diappear (note we may still need to commit the ch
 **Workflows**
 
 
+
+
+
+
+---
+
+<br>
+
+**Undo things**
+
+
+* add staged content to the last commit (and change the commit message)
+
+```git commit --amend```
+
+* if there is a new untracked file or non-added changes you want to remove
+
+```
+git checkout -- filename
+```
+
+the `--` is to separate the commits (there are none in this case cause we want the HEAD on the current branch, which is default) and filenames that should be checked out
+
+
+* remove last commit, but keep the modifications as non-added 
+
+```
+git reset --mixed SHA
+```
+
+* remove last commit and discard the changes altogether (!dangerous)
+
+```
+git reset --hard SHA
+```
+
+!!! hard reset can be undone using reflog, just see where the HEAD was before and find the SHA you need
+
+```
+git reflog
+```
+
+* revert a single file to previous state (at commit <SHA>) and get the file 
+modification from that point onwards back to working directory (don't change 
+history or anything)
+
+```
+git checkout <SHA> -- filename
+```
+
+* reset to a specific commit 
+
+```
+git reset --hard <SHA>
+```
+
+
+* to undo changes but don't change history 
+
+```
+git revert <SHA>
+```
+
+* to remove new untracked files (e.g. after trying code that produces output, we need to clean this "testing" output before using "datalad run" (see [here](https://www.codegrepper.com/code-examples/shell/git+remove+Untracked+files))
+
+dry run (see what would be removed)
+```
+git clean -n 
+```
+
+remove files (-f), directories (-d), ignored files (-X), ignored and 
+nonignored files (-x)
+
+```
+git clean -fx
+```
+
+git clean and reset can be both used equivalently to clean working tree
+
+only git reset can reset things in the staging index 
 
 
 
