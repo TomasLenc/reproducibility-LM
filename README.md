@@ -57,13 +57,14 @@ alias l='ls -lah'
 
 `rm -rf` removes directories and their contents (very dangerous!)
 
+`touch` creates an empty text file
 
 ### GitKraken
 
 To install GitKraken please [click here](https://www.gitkraken.com/).
 
 If you are  student or teaching, you can use upgrade your [GitHub account to Pro](https://education.github.com/pack),
-and you can visualise the private repos in your GitKraken. Otherwise all the repos you can see on work on with GitKraken has to be public. 
+and you can visualise the private repos in your GitKraken. Otherwise all the repos you can see on work on with GitKraken has to be public.
 
 
 
