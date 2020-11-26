@@ -1,7 +1,10 @@
 
+For more resources, see also [this RnB lab repo](https://github.com/rhythmbrains/reproducibilityResources). 
 
 
+<br>
 
+---
 
 ### Command line basics
 
@@ -59,12 +62,41 @@ alias l='ls -lah'
 
 `touch` creates an empty text file
 
+
+
+<br> 
+
+---
+
 ### GitKraken
 
 To install GitKraken please [click here](https://www.gitkraken.com/).
 
 If you are  student or teaching, you can use upgrade your [GitHub account to Pro](https://education.github.com/pack),
 and you can visualise the private repos in your GitKraken. Otherwise all the repos you can see on work on with GitKraken has to be public.
+
+
+
+<br>
+
+---
+
+### Atom 
+
+Atom is a lightweight intuitive text editor that will make our lives a lot easier when dealing with text files (which we do a lot when working with bash, git, datalad etc.). 
+
+* install [Atom](https://atom.io/) from their website. 
+* restart your terminal 
+
+Now you should be able to use `atom folder_name` to open a folder and `atom file_name` to open a file.
+
+If this is not working, it may be that Atom has failed to automatically create a symbolic link in your `/usr/local/bin` upon installation. 
+
+You can verify this by typing `which atom`, and this should return `/usr/local/bin/atom`. If it doesn't, the link was not created. However, in such case, you can easily create the link yourself on your Mac: 
+
+```
+ln -s /Applications/Atom.app/Contents/Resources/app/atom.sh /usr/local/bin/atom
+```
 
 
 
@@ -82,7 +114,7 @@ git config --global user.name "<Your-Full-Name>"
 git config --global user.email "<your-email-address>"
 ```
 
-* install [atom](https://atom.io/) and set it as default text editor
+* set Atom as default text editor
 
 ```
 git config --global core.editor "atom --wait"
