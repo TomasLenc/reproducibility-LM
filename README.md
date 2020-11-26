@@ -64,6 +64,7 @@ alias l='ls -lah'
 
 
 <br> 
+
 ---
 
 ### GIT
@@ -98,6 +99,13 @@ Paste the following code into `~/.gitconfig` file:
 
 ```
 
+<br> 
+
+**Install GitKraken **
+
+
+
+
 
 #### local workflow
 
@@ -122,6 +130,7 @@ Paste the following code into `~/.gitconfig` file:
 
 
 <br>
+
 **Moving in history**
 
 `git checkout <SHA>` 
@@ -129,6 +138,7 @@ Paste the following code into `~/.gitconfig` file:
 * detached HEAD
 
 <br>
+
 **Branches**
 
 `git branch -av` lists all branches
@@ -138,6 +148,7 @@ Paste the following code into `~/.gitconfig` file:
 `git checkout branchName` switches to existing branch
  
 <br>
+
 **Merge**
 
 from branch *to* which you want to merge, type 
@@ -154,6 +165,7 @@ git merge branchFromWhichToMerge
 
 
 <br>
+
 **Undo things**
 
 
@@ -232,8 +244,11 @@ only git reset can reset things in the staging index
 
 
 <br> 
+
 ---
+
 ### Github
+
 
 * make github account 
 
@@ -242,6 +257,7 @@ only git reset can reset things in the staging index
 
 
 <br>
+
 #### adding remote for myself
 
 `git remote add remoteName url` adds a remote repo (e.g. GitHub)
@@ -253,6 +269,7 @@ only git reset can reset things in the staging index
 
 
 <br>
+
 #### collaboration in one shared repo 
 
 `git fetch remoteName` 
@@ -260,6 +277,7 @@ only git reset can reset things in the staging index
 `git pull remoteName branchName`
 
 <br>
+
 #### collaboration using pull-requests
 
 * fork a repo on GitHub
@@ -273,6 +291,7 @@ only git reset can reset things in the staging index
 
 
 <br>
+
 **Submodules** 
 
 `git add submodule url` adds a git repo as submodule 
@@ -343,20 +362,17 @@ and then the "dirty" flag will diappear (note we may still need to commit the ch
 
 
 <br>
+
 **Rebase**
 
 * no merge commmit, keeps history clean
 
 <br>
+
 **Workflows**
 
 
 
-
-
-<br> 
---- 
-### GitKraken
 
 
 
